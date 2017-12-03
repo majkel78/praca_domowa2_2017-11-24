@@ -4,3 +4,8 @@ Najpopularniejszym używanym systemem liczbowym jest system dziesiętny. Jest to
 
 ### Typ binarny (dwójkowy)
 Pozycyjny system liczbowy o podstawie 2. 
+
+
+[Przykladowy link](https://github.com/majkel78/praca_domowa2_2017-11-24/blob/master/fibonacci.c)
+[Przykladowy link 2](blob/master/fibonacci.c)
+[Przykladowy link 3](fibonacci.c)
