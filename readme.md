@@ -43,16 +43,17 @@ Do manualnej konwersji liczby dziesiętnej na dwójkową stosujemy niniejszy spo
 - dzielenie (za każdym razem przez 2) wykonujemy aż osiągniemy w wyniku dzielenia 0
 
 Przykład:
+
 | Liczba dziesiętna | Dzielimy przez 2 | Reszta (modulo) |
-|-|-|-|
-|122|:2|0|
-|61|:2|1|
-|30|:2|0|
-|15|:2|1|
-|7|:2|1|
-|3|:2|1|
-|1|:2|1|
-|0|-|-|
+|-------------------|------------------|-----------------|
+|122                |:2                |0                |
+|61                 |:2                |1                |
+|30                 |:2                |0                |
+|15                 |:2                |1                |
+|7                  |:2                |1                |
+|3                  |:2                |1                |
+|1                  |:2                |1                |
+|0                  |-                 |-                |
 
 Wynik odczytujemy od dołu i w tym przypadku będzie to $$122_{10} = 1111010_{2}$$
 
