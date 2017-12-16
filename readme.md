@@ -68,6 +68,7 @@ $$1111010_{2}=122_{10}$$
 
 ### Konwersja z systemu szesnastkowego na dwójkowy
 Konwersja pomiędzy systemami szesnastkowym i dwójkowym jest prosta w realizacji, ponieważ jednej cyfrze szesnastkowej odpowiada 4-cyftrowy zapis w systemie dwójkowym. Kolejnym cyfrom zapisu szesnastkowego odpowiadają kolejne wartości w zapisie dwójkowym:
+
 |Zapis szesnastkowy|Zapis dwójkowy|
 |-|-|
 |0|0000|
