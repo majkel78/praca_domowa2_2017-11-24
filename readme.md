@@ -6,7 +6,7 @@ Najpopularniejszym używanym systemem liczbowym jest system dziesiętny. Jest to
 Pozycyjny system liczbowy o podstawie 2. Podstawę jego stanowi liczba 2, wszystkie więc liczby można zapisać dwiema tylko cyframi: 0 i 1. Liczby naturalne w systemie dwójkowym zapisujemy tak samo jak w systemie dziesiętnym - zamiast kolejnych potęg liczby dziesięć, stosujemy kolejne potęgi liczby dwa.
 
 Przykład zapisania liczby dziesiętej 9 w systemie dwójkowym:
-1001<sub>(2)</sub>=1*2<sup>3</sup>+0*2<sup>2</sup>+0*2<sup>1</sup>+1*2<sup>0</sup>=8+1=9<sub>(10)</sub>
+1001<sub>(2)</sub> = 1 * 2<sup>3</sup> + 0 * 2<sup>2</sup> + 0 * 2<sup>1</sup> + 1 * 2<sup>0</sup> = 8 + 1 = 9<sub>(10)</sub>
 ![1001(2)=1*2^3+0*2^2+0*2^1+1*2^0=8+1=9(10)](http://www.sciweavers.org/tex2img.php?eq=1001_%7b2%7d%3d1*2%5e3%2b0*2%5e2%2b0*2%5e1%2b1*2%5e0%3d8%2b1%3d9_%7b10%7d&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
 
 
