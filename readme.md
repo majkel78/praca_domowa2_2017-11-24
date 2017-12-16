@@ -117,6 +117,7 @@ scanf("%d",&a);             // pobranie od użytkownika wartości w formacie dzi
 Specyfikator jest wymagany. Pozostałe parametry (flagi, szerokość, precyzja, rozmiar) są opcjonalne.
 
 Tabela kodów (specyfikatorów):
+
 |Specyfikator|Typ argumentu|Przykład|
 |-|-|-|
 |%d|liczba całkowita ze znakiem (format dziesiętny)|1234|
@@ -143,25 +144,28 @@ Flagi:
 |#|	Jeżeli flaga zostanie użyta razem ze specyfikatorami o, x, lub X to wynik, który jest niezerowy zostanie poprzedzony 0, 0x lub 0X odpowiednio do typów.<br><br>Jeżeli flaga zostanie użyta razem ze specyfikatorami e, E lub f to na wyjściu zostanie wymuszone pojawienie się separatora oddzielającego część całkowitą od ułamkowej. Domyślnie, po wartości całkowitej nie jest wypisywany separator oddzielający (domyślnie jest nim kropka).<br><br>Jeżeli flaga zostanie użyta ze specyfikatorami g lub G to na wyjściu zostanie wymuszone pojawienie się separatora oddzielającego część całkowitą od ułamkowej oraz zapobiegnie ucięciu zer końcowych.<br><br>Flaga jest ignorowana gdy zostanie użyta z następującymi specyfikatorami typów: c, d, i , u lub s. |
 
 Szerokość:
+
 |Szerokość|	Opis|
 |-|-|
 |(liczba)|	Minimalna liczba znaków do wyświetlenia. Jeżeli liczba wyświetlanych znaków jest mniejsza niż podana wartość to wynik będzie uzupełniony spacjami. Wartość nie zostanie obcięta jeżeli wynik jest dłuższy niż wartość podana.|
 |*|	Szerokość nie jest określona przez tekst sformatowany. Długość tekstu określa się natomiast poprzez argument będący liczbą, który musi wystąpić bezpośrednio przed wypisywaną wartością.|
 
-Przykład użycia *:
+Przykład użycia "*":
 ```c
 printf( "%*g", 20, 123.0 );
 //Powyższy zapis równoważny jest poniższemu:
-printf( "%20g", 123.0 );|
+printf( "%20g", 123.0 );
 ```
 
 Precyzja:
+
 |.precyzja|	opis|
 |-|-|
 |.liczba|	Dla specyfikatorów typów całkowitych tj. d, i, o, u, x oraz X precyzja określa minimalną liczbę cyfr jaka ma zostać wyświetlona. Jeżeli liczba cyfr jest mniejsza od podanej wartości to liczba zostanie uzupełniona zerami wiodącymi. Liczba nie zostanie ucięta jeżeli liczba będzie dłuższa niż podana wartość. Jeżeli długość precyzji będzie wynosiła 0 oraz wartość, która ma zostać wypisana będzie wynosiła 0 to nic nie zostanie wypisane na ekran. Jeżeli nie określono precyzji, domyślną wartością dla wymienionych powyżej typów jest 1.<br><br>Dla specyfikatorów typów e, E oraz f precyzja jest maksymalną liczbą cyfr po przecinku jaka ma zostać wypisana.<br><br>Dla specyfikatorów typów g i G precyzja oznacza maksymalną liczbę cyfr do wyświetlenia.<br><br>Dla specyfikatora s precyzja oznacza maksymalną liczbę znaków jaka może zostać wypisana z łańcucha znaków. Domyślnie wszystkie znaki z łańcucha znaków są wypisywane aż do napotkania znaku terminalnego '\0'.<br><br>Dla specyfikatora typu c precyzja nie ma żadnego efektu.|
 |.*|	Precyzja nie jest określona przez tekst sformatowany. Precyzję określa się natomiast poprzez argument będący liczbą, który musi wystąpić bezpośrednio przed wypisywaną wartością.|
 
 Rozmiar:
+
 |Rozmiar|	opis|
 |-|-|
 |h|	Argument jest interpretowany jako short int lub unsigned short int (dotyczy tylko specyfikatorów liczbowych, tj. i, d, u, o, x oraz X).|
