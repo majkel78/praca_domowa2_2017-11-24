@@ -7,6 +7,9 @@ Pozycyjny system liczbowy o podstawie 2. Podstawę jego stanowi liczba 2, wszyst
 
 Przykład zapisania liczby dziesiętej 9 w systemie dwójkowym:
 $$1001_{2}=1*2^3+0*2^2+0*2^1+1*2^0=8+1=9_{10}$$
+![zapis](http://www.sciweavers.org/tex2img.php?eq=1001_%7b2%7d%3d1*2%5e3%2b0*2%5e2%2b0*2%5e1%2b1*2%5e0%3d8%2b1%3d9_%7b10%7d&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+![1001(2)=1*2^3](http://www.sciweavers.org/tex2img.php?eq=1001_%7b2%7d%3d1*2%5e3%2b0*2%5e2%2b0*2%5e1%2b1*2%5e0%3d8%2b1%3d9_%7b10%7d&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+
 
 Na potrzeby systemów informatycznych opracowano w systemie dwójkowym sposób reprezentacji liczb ujemnych:
 - kod znak-moduł
