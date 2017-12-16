@@ -5,10 +5,8 @@ Najpopularniejszym używanym systemem liczbowym jest system dziesiętny. Jest to
 ### Typ binarny (dwójkowy)
 Pozycyjny system liczbowy o podstawie 2. Podstawę jego stanowi liczba 2, wszystkie więc liczby można zapisać dwiema tylko cyframi: 0 i 1. Liczby naturalne w systemie dwójkowym zapisujemy tak samo jak w systemie dziesiętnym - zamiast kolejnych potęg liczby dziesięć, stosujemy kolejne potęgi liczby dwa.
 
-Przykład zapisania liczby dziesiętej 9 w systemie dwójkowym:
+Przykład zapisania liczby dziesiętej 9 w systemie dwójkowym:<br>
 1001<sub>(2)</sub> = 1 * 2<sup>3</sup> + 0 * 2<sup>2</sup> + 0 * 2<sup>1</sup> + 1 * 2<sup>0</sup> = 8 + 1 = 9<sub>(10)</sub>
-![1001(2)=1*2^3+0*2^2+0*2^1+1*2^0=8+1=9(10)](http://www.sciweavers.org/tex2img.php?eq=1001_%7b2%7d%3d1*2%5e3%2b0*2%5e2%2b0*2%5e1%2b1*2%5e0%3d8%2b1%3d9_%7b10%7d&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
-
 
 Na potrzeby systemów informatycznych opracowano w systemie dwójkowym sposób reprezentacji liczb ujemnych:
 - kod znak-moduł
@@ -18,17 +16,16 @@ Na potrzeby systemów informatycznych opracowano w systemie dwójkowym sposób r
 ### Typ ósemkowy (oktalny)
 Pozycyjny system liczbowy o podstawie 8. Podstawa wynosi 8 więc wszystkie liczby zapisuje się cyframi od 0 do 7. Nazywany jest też systemem "oktalnym" (od słowa octal).
 
-Przykład zapisania liczby dziesiętnej 99 w systemie ósemkowym:
-![143(8)=1*8^2+4*8^1+3*8^0=64+32+3=99(10)](http://www.sciweavers.org/tex2img.php?eq=143_%7b8%7d%3d1*8%5e2%2b4*8%5e1%2b3*8%5e0%3d64%2b32%2b3%3d99_%7b10%7d&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+Przykład zapisania liczby dziesiętnej 99 w systemie ósemkowym:<br>
+143<sub>(8)</sub> = 1 * 8<sup>2</sup> + 4 * 8<sup>1</sup> + 3 * 8<sup>0</sup> = 64 + 32 + 3 = 99<sub>(10)</sub>
 
 W językach programowania do zapisu liczby w formacie oktalnym (jeżeli język przewiduje wprowadzanie liczb w takim formacie) stosuje się przerostek 0 np. 0143 to zapis ósemkowy liczby dziesiętnej 99. Przykładem wykorzystującym zapis ósemkowy jest polecenie `chmod` (w systemach linux) którym zmienia się uprawnienia do plików (aby ustawić uprawnienia na `rwx r-x r--` stosuje się polecenie `chmod 754 plik`).
 
 ### Typ szesnastkowy (heksadecymalny)
 Pozycyjny system liczbowy o podstawie 16. Cyfry w tym systemie zapisuje się za pomocą znaków: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F. Cyfry od 0 do 9 mają te same wartości co w systemie dziesiętnym natomiast A,B,C,D,E,F odpowiadają kolejno wartościom 10,11,12,13,14,15.
 
-Przykład zapisania liczby dziesiętnej 999 w systemie szesnastkowym:
-$$3E7_{16}=3*16^2+14*16^1+7=768+224+7=999_{10}$$
-![3E7(16)=3*16^2+14*16^1+7=768+224+7=999(10)](http://www.sciweavers.org/tex2img.php?eq=143_%7b8%7d%3d1*8%5e2%2b4*8%5e1%2b3*8%5e0%3d64%2b32%2b3%3d99_%7b10%7d&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=)
+Przykład zapisania liczby dziesiętnej 999 w systemie szesnastkowym:<br>
+3E7<sub>(16)</sub> = 3 * 16<sup>2</sup> + 14 * 16<sup>1</sup> + 7 = 768 + 224 + 7 = 999<sub>(10)</sub>
 
 W językach programowania bardzo często używa się zapisu szesnastkowego. Najczęstsze sposoby zapisu to:
 - w językach C,C++,C#, Java, Python: prefiks 0x (np. `0x3E7`)
@@ -58,15 +55,15 @@ Przykład:
 |1                  |:2                |1                |
 |0                  |-                 |-                |
 
-Wynik odczytujemy od dołu i w tym przypadku będzie to $$122_{10} = 1111010_{2}$$
+Wynik odczytujemy od dołu i w tym przypadku będzie to 122<sub>(10)</sub> = 1111010<sub>(2)</sub>
 
 ### Konwersja z systemu dwójkowego na dziesiętny
 Przeliczanie z systemu dwójkowego na dziesiętny odbywa się poprzez mnożenie cyfry na danej pozycji z wartością jaką odpowiada przypisana do niej waga. Wagi odpowiadają kolejnym potęgom liczby będącej podstawą systemu (czyli w przypadku systemu binarnego jest to 2) począwszy od potęgi 0 oraz zaczynając od ostatniej liczby.
 
-Przykład:
-$$1111010_{2}=1*2^6+1*2^5+1*2^4+1*2^3+0*2^2+1*2^1+0*2^0$$
-$$1111010_{2}=64+32+16+8+0+2+0$$
-$$1111010_{2}=122_{10}$$
+Przykład:<br>
+1111010<sub>(2)</sub> = 1 * 2<sup>6</sup> + 1 * 2<sup>5</sup> + 1 * 2<sup>4</sup> + 1 * 2<sup>3</sup> + 0 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 0 * 2<sup>0</sup><br>
+1111010<sub>(2)</sub> = 64 + 32 + 16 + 8 + 0 + 2 + 0<br>
+1111010<sub>(2)</sub> = 122<sup>(10)</sup>
 
 
 ### Konwersja z systemu szesnastkowego na dwójkowy
@@ -91,21 +88,21 @@ Konwersja pomiędzy systemami szesnastkowym i dwójkowym jest prosta w realizacj
 |E|1110|
 |F|1111|
 
-Konwertując liczbę zapisaną w systemie szesnastkowym na liczbę w systemie dwójkowym każdą wartość cyfry szesnastkowej zapisujemy w postaci czterech cyfr zapisu binarnego, np:
-$$\text{1FA0}_{16}=0001\ 1111\ 1010\ 0000_{2}$$
+Konwertując liczbę zapisaną w systemie szesnastkowym na liczbę w systemie dwójkowym każdą wartość cyfry szesnastkowej zapisujemy w postaci czterech cyfr zapisu binarnego, np:<br>
+1FA0<sub>(16)</sub> = 0001 1111 1010 0000<sub>(2)</sub>
 
 ### Konwersja z systemu dwójkowego na szesnastkowy
 Niniejsza konwersja przebiega dokładnie na tej samej zasadzie co konwersja opisana powyżej, przy czym każde 4 bity (cyfry) liczby w zapisie dwójkowym odpowiadają jednej cyfrze zapisu szesnastkowego.
 Przykład:
-$$1010\ 0000\ 0001\ 1111_{2}=\text{A01F}_{16}$$
+1010\ 0000\ 0001\ 1111_{2}=\text{A01F}_{16}$$
 ponieważ:
-$$1010_{2}=\text{A}_{16}$$
-$$0000_{2}=\text{0}_{16}$$
-$$0001_{2}=\text{1}_{16}$$
-$$1111_{2}=\text{F}_{16}$$
+1010<sub>(2)</sub> = A<sub>(16)</sub><br>
+0000<sub>(2)</sub> = 0<sub>(16)</sub><br>
+0001<sub>(2)</sub> = 1<sub>(16)</sub><br>
+1111<sub>(2)</sub> = F<sub>(16)</sub><br>
 
-Uwaga: zapis dwójkowy o długości innej niż wielokrotność 4 podczas konwersji uzupełniamy z przodu zerami, np:
-$$101111_{2}=10\ 1111_{2}=0010\ 1111_{2}=\text{2F}_{16}$$
+Uwaga: zapis dwójkowy o długości innej niż wielokrotność 4 podczas konwersji uzupełniamy z przodu zerami, np:<br>
+101111<sub>(2)</sub> = 10 1111<sub>(2)</sub> = 0010 1111<sub>(2)</sub> = 2F<sub>(16)</sub>
 
 # Formatowanie printf()/scanf()
 Funkcje języka C printf() oraz scanf() używają specjalnych kodów (tagów) do wyświetlania zawartości przekazanych zmiennych lub interpretacji ciągu znaków w celu wpisania ich do zmiennej. Ogólna budowa wygląda następująco:
