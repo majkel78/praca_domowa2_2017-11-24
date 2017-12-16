@@ -22,7 +22,7 @@ Przykład zapisania liczby dziesiętnej 99 w systemie ósemkowym:<br>
 W językach programowania do zapisu liczby w formacie oktalnym (jeżeli język przewiduje wprowadzanie liczb w takim formacie) stosuje się przerostek 0 np. 0143 to zapis ósemkowy liczby dziesiętnej 99. Przykładem wykorzystującym zapis ósemkowy jest polecenie `chmod` (w systemach linux) którym zmienia się uprawnienia do plików (aby ustawić uprawnienia na `rwx r-x r--` stosuje się polecenie `chmod 754 plik`).
 
 ### Typ szesnastkowy (heksadecymalny)
-Pozycyjny system liczbowy o podstawie 16. Cyfry w tym systemie zapisuje się za pomocą znaków: 0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F. Cyfry od 0 do 9 mają te same wartości co w systemie dziesiętnym natomiast A,B,C,D,E,F odpowiadają kolejno wartościom 10,11,12,13,14,15.
+Pozycyjny system liczbowy o podstawie 16. Cyfry w tym systemie zapisuje się za pomocą znaków: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F. Cyfry od 0 do 9 mają te same wartości co w systemie dziesiętnym natomiast A, B, C, D, E, F odpowiadają kolejno wartościom 10, 11, 12, 13, 14, 15.
 
 Przykład zapisania liczby dziesiętnej 999 w systemie szesnastkowym:<br>
 3E7<sub>(16)</sub> = 3 * 16<sup>2</sup> + 14 * 16<sup>1</sup> + 7 = 768 + 224 + 7 = 999<sub>(10)</sub>
@@ -63,7 +63,7 @@ Przeliczanie z systemu dwójkowego na dziesiętny odbywa się poprzez mnożenie 
 Przykład:<br>
 1111010<sub>(2)</sub> = 1 * 2<sup>6</sup> + 1 * 2<sup>5</sup> + 1 * 2<sup>4</sup> + 1 * 2<sup>3</sup> + 0 * 2<sup>2</sup> + 1 * 2<sup>1</sup> + 0 * 2<sup>0</sup><br>
 1111010<sub>(2)</sub> = 64 + 32 + 16 + 8 + 0 + 2 + 0<br>
-1111010<sub>(2)</sub> = 122<sup>(10)</sup>
+1111010<sub>(2)</sub> = 122<sub>(10)</sub>
 
 
 ### Konwersja z systemu szesnastkowego na dwójkowy
@@ -94,7 +94,7 @@ Konwertując liczbę zapisaną w systemie szesnastkowym na liczbę w systemie dw
 ### Konwersja z systemu dwójkowego na szesnastkowy
 Niniejsza konwersja przebiega dokładnie na tej samej zasadzie co konwersja opisana powyżej, przy czym każde 4 bity (cyfry) liczby w zapisie dwójkowym odpowiadają jednej cyfrze zapisu szesnastkowego.
 Przykład:
-1010\ 0000\ 0001\ 1111_{2}=\text{A01F}_{16}$$
+1010 0000 0001 1111<sub>(2)</sub> = A01F<sub>(16)</sub>
 ponieważ:
 1010<sub>(2)</sub> = A<sub>(16)</sub><br>
 0000<sub>(2)</sub> = 0<sub>(16)</sub><br>
