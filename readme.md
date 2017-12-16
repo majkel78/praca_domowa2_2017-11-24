@@ -93,9 +93,9 @@ Konwertując liczbę zapisaną w systemie szesnastkowym na liczbę w systemie dw
 
 ### Konwersja z systemu dwójkowego na szesnastkowy
 Niniejsza konwersja przebiega dokładnie na tej samej zasadzie co konwersja opisana powyżej, przy czym każde 4 bity (cyfry) liczby w zapisie dwójkowym odpowiadają jednej cyfrze zapisu szesnastkowego.
-Przykład:
-1010 0000 0001 1111<sub>(2)</sub> = A01F<sub>(16)</sub>
-ponieważ:
+Przykład:<br>
+1010 0000 0001 1111<sub>(2)</sub> = A01F<sub>(16)</sub><br>
+ponieważ:<br>
 1010<sub>(2)</sub> = A<sub>(16)</sub><br>
 0000<sub>(2)</sub> = 0<sub>(16)</sub><br>
 0001<sub>(2)</sub> = 1<sub>(16)</sub><br>
