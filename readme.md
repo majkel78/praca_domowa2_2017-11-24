@@ -135,6 +135,7 @@ Tabela kodów (specyfikatorów):
 |%p|adres w pamięci|A600:2000|
 
 Flagi:
+
 |flaga|opis|
 |-|-|
 |-|	Wyrównaj wypisywane dane do lewej. Pozycja jest ustalana na podstawie parametru szerokość oraz na podstawie długości tekstu wyjściowego. Domyślnie tekst jest wyrównywany do prawej.|
@@ -150,7 +151,7 @@ Szerokość:
 |(liczba)|	Minimalna liczba znaków do wyświetlenia. Jeżeli liczba wyświetlanych znaków jest mniejsza niż podana wartość to wynik będzie uzupełniony spacjami. Wartość nie zostanie obcięta jeżeli wynik jest dłuższy niż wartość podana.|
 |*|	Szerokość nie jest określona przez tekst sformatowany. Długość tekstu określa się natomiast poprzez argument będący liczbą, który musi wystąpić bezpośrednio przed wypisywaną wartością.|
 
-Przykład użycia "*":
+Przykład użycia *:
 ```c
 printf( "%*g", 20, 123.0 );
 //Powyższy zapis równoważny jest poniższemu:
