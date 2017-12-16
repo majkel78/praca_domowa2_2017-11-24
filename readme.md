@@ -35,7 +35,7 @@ W językach programowania bardzo często używa się zapisu szesnastkowego. Najc
 
 W systemach informatycznych system szesnastkowy stosuje się między innymi do zapisu koloru (`0xFF0000` oznacza czerwony), adresu sprzętowego MAC (`00:0B:E3:2F:FA:D1`) czy też adresu IPv6 (`2001:db8:85a3:8d3:1319:8a2e:370:7348`).
 
-# 2. Konwersja między systemami 10-2 oraz 16-2.
+# 2. Konwersja między systemami 10-2 oraz 16-2
 ### Konwersja z systemu dziesiętnego na dwójkowy
 Do manualnej konwersji liczby dziesiętnej na dwójkową stosujemy niniejszy sposób:
 - liczbę dziesiętną dzielimy na 2
@@ -43,28 +43,126 @@ Do manualnej konwersji liczby dziesiętnej na dwójkową stosujemy niniejszy spo
 - dzielenie (za każdym razem przez 2) wykonujemy aż osiągniemy w wyniku dzielenia 0
 
 Przykład:
-| 122 | 2 | 0 |
-|:---:|:-:|:-:|
-| 61  | 2 | 1 |
+| Liczba dziesiętna | Dzielimy przez 2 | Reszta (modulo) |
+|-|-|-|
+|122|:2|0|
+|61|:2|1|
+|30|:2|0|
+|15|:2|1|
+|7|:2|1|
+|3|:2|1|
+|1|:2|1|
+|0|-|-|
 
-| 122 | 2 | 0 |
-| 61  | 2 | 1 |
+Wynik odczytujemy od dołu i w tym przypadku będzie to $$122_{10} = 1111010_{2}$$
 
-| 122 | 2 | 0 |
-|-----|---|---|
-| 61  | 2 | 1 |
+### Konwersja z systemu dwójkowego na dziesiętny
+Przeliczanie z systemu dwójkowego na dziesiętny odbywa się poprzez mnożenie cyfry na danej pozycji z wartością jaką odpowiada przypisana do niej waga. Wagi odpowiadają kolejnym potęgom liczby będącej podstawą systemu (czyli w przypadku systemu binarnego jest to 2) począwszy od potęgi 0 oraz zaczynając od ostatniej liczby.
 
-|-----|---|---|
-| 122 | 2 | 0 |
-| 61  | 2 | 1 |
+Przykład:
+$$1111010_{2}=1*2^6+1*2^5+1*2^4+1*2^3+0*2^2+1*2^1+0*2^0$$
+$$1111010_{2}=64+32+16+8+0+2+0$$
+$$1111010_{2}=122_{10}$$
 
-|     |   |   |
-|-----|---|---|
-| 122 | 2 | 0 |
-| 61  | 2 | 1 |
 
-|     |   |   |
-|-----|---|---|
-| 122 | 2 | 0 |
-| 61  | 2 | 1 |
-|     |   |   |
+### Konwersja z systemu szesnastkowego na dwójkowy
+Konwersja pomiędzy systemami szesnastkowym i dwójkowym jest prosta w realizacji, ponieważ jednej cyfrze szesnastkowej odpowiada 4-cyftrowy zapis w systemie dwójkowym. Kolejnym cyfrom zapisu szesnastkowego odpowiadają kolejne wartości w zapisie dwójkowym:
+|Zapis szesnastkowy|Zapis dwójkowy|
+|-|-|
+|0|0000|
+|1|0001|
+|2|0010|
+|3|0011|
+|4|0100|
+|5|0101|
+|6|0110|
+|7|0111|
+|8|1000|
+|9|1001|
+|A|1010|
+|B|1011|
+|C|1100|
+|D|1101|
+|E|1110|
+|F|1111|
+
+Konwertując liczbę zapisaną w systemie szesnastkowym na liczbę w systemie dwójkowym każdą wartość cyfry szesnastkowej zapisujemy w postaci czterech cyfr zapisu binarnego, np:
+$$\text{1FA0}_{16}=0001\ 1111\ 1010\ 0000_{2}$$
+
+### Konwersja z systemu dwójkowego na szesnastkowy
+Niniejsza konwersja przebiega dokładnie na tej samej zasadzie co konwersja opisana powyżej, przy czym każde 4 bity (cyfry) liczby w zapisie dwójkowym odpowiadają jednej cyfrze zapisu szesnastkowego.
+Przykład:
+$$1010\ 0000\ 0001\ 1111_{2}=\text{A01F}_{16}$$
+ponieważ:
+$$1010_{2}=\text{A}_{16}$$
+$$0000_{2}=\text{0}_{16}$$
+$$0001_{2}=\text{1}_{16}$$
+$$1111_{2}=\text{F}_{16}$$
+
+Uwaga: zapis dwójkowy o długości innej niż wielokrotność 4 podczas konwersji uzupełniamy z przodu zerami, np:
+$$101111_{2}=10\ 1111_{2}=0010\ 1111_{2}=\text{2F}_{16}$$
+
+# Formatowanie printf()/scanf()
+Funkcje języka C printf() oraz scanf() używają specjalnych kodów (tagów) do wyświetlania zawartości przekazanych zmiennych lub interpretacji ciągu znaków w celu wpisania ich do zmiennej. Ogólna budowa wygląda następująco:
+```%[flagi][szerokość][.precyzja][rozmiar]specyfikator_typu```
+
+Przykłady:
+```c
+printf("Zmienna a = %d",a); // wypisanie wartości zmiennej "a" w postaci dziesiętnej
+scanf("%d",&a);             // pobranie od użytkownika wartości w formacie dziesiętnym i wpisaniem jej do zmiennej "a"
+```
+
+Specyfikator jest wymagany. Pozostałe parametry (flagi, szerokość, precyzja, rozmiar) są opcjonalne.
+
+Tabela kodów (specyfikatorów):
+|Specyfikator|Typ argumentu|Przykład|
+|-|-|-|
+|%d|liczba całkowita ze znakiem (format dziesiętny)|1234|
+|%i|j.w.|1234|
+|%u|liczba całkolwita bez znaku (format dziesiętny)|4096|
+|%o|liczba w systemie ósemkowym (oktalnym)|774|
+|%x|liczba w systemie szesnastkowym (małe litery)|1ffa|
+|%X|liczba w systemie szesnastkowym (duże litery)|1FFA|
+|%f|liczba rzeczywista (typ: float lub double), wynik dziesiętny|12.54300|
+|%e|liczba w notacji naukowej (ze znakiem e)|2.123e+2|
+|%E|liczba w notacji naukowej (ze znakiem E)|2.123E+2|
+|%g|liczba rzeczywista w notacji %e bądź %f. Notacja naukowa jest używana tylko wtedy gdy wykładnik jest mniejszy od -4 lub gdy wykładnik jest większy albo równy od parametru precyzja|3.12|
+|%c|znak|w|
+|%s|ciąg znaków zakończony znakiem \0|World|
+|%p|adres w pamięci|A600:2000|
+
+Flagi:
+|flaga|opis|
+|-|-|
+|-|	Wyrównaj wypisywane dane do lewej. Pozycja jest ustalana na podstawie parametru szerokość oraz na podstawie długości tekstu wyjściowego. Domyślnie tekst jest wyrównywany do prawej.|
+|+|	Poprzedza wynik znakiem + lub - jeżeli wartość wyjściowa jest liczbą całkowitą ze znakiem. Domyślnie tylko liczby ujemne są poprzedzone znakiem -.|
+|0|	Jeżeli parametr szerokość jest poprzedzony 0, znaki 0 są wstawiane dopóki minimalna długość tekstu wyjściowego nie zostanie osiągnięta.|
+|(spacja)|	Poprzedza wartość wyjściową jedną spacją jeżeli jest to liczba nieujemna. Flaga ta jest ignorowana gdy w tagu wystąpiła flaga +.|
+|#|	Jeżeli flaga zostanie użyta razem ze specyfikatorami o, x, lub X to wynik, który jest niezerowy zostanie poprzedzony 0, 0x lub 0X odpowiednio do typów.<br><br>Jeżeli flaga zostanie użyta razem ze specyfikatorami e, E lub f to na wyjściu zostanie wymuszone pojawienie się separatora oddzielającego część całkowitą od ułamkowej. Domyślnie, po wartości całkowitej nie jest wypisywany separator oddzielający (domyślnie jest nim kropka).<br><br>Jeżeli flaga zostanie użyta ze specyfikatorami g lub G to na wyjściu zostanie wymuszone pojawienie się separatora oddzielającego część całkowitą od ułamkowej oraz zapobiegnie ucięciu zer końcowych.<br><br>Flaga jest ignorowana gdy zostanie użyta z następującymi specyfikatorami typów: c, d, i , u lub s. |
+
+Szerokość:
+|Szerokość|	Opis|
+|-|-|
+|(liczba)|	Minimalna liczba znaków do wyświetlenia. Jeżeli liczba wyświetlanych znaków jest mniejsza niż podana wartość to wynik będzie uzupełniony spacjami. Wartość nie zostanie obcięta jeżeli wynik jest dłuższy niż wartość podana.|
+|*|	Szerokość nie jest określona przez tekst sformatowany. Długość tekstu określa się natomiast poprzez argument będący liczbą, który musi wystąpić bezpośrednio przed wypisywaną wartością.|
+
+Przykład użycia *:
+```c
+printf( "%*g", 20, 123.0 );
+//Powyższy zapis równoważny jest poniższemu:
+printf( "%20g", 123.0 );|
+```
+
+Precyzja:
+|.precyzja|	opis|
+|-|-|
+|.liczba|	Dla specyfikatorów typów całkowitych tj. d, i, o, u, x oraz X precyzja określa minimalną liczbę cyfr jaka ma zostać wyświetlona. Jeżeli liczba cyfr jest mniejsza od podanej wartości to liczba zostanie uzupełniona zerami wiodącymi. Liczba nie zostanie ucięta jeżeli liczba będzie dłuższa niż podana wartość. Jeżeli długość precyzji będzie wynosiła 0 oraz wartość, która ma zostać wypisana będzie wynosiła 0 to nic nie zostanie wypisane na ekran. Jeżeli nie określono precyzji, domyślną wartością dla wymienionych powyżej typów jest 1.<br><br>Dla specyfikatorów typów e, E oraz f precyzja jest maksymalną liczbą cyfr po przecinku jaka ma zostać wypisana.<br><br>Dla specyfikatorów typów g i G precyzja oznacza maksymalną liczbę cyfr do wyświetlenia.<br><br>Dla specyfikatora s precyzja oznacza maksymalną liczbę znaków jaka może zostać wypisana z łańcucha znaków. Domyślnie wszystkie znaki z łańcucha znaków są wypisywane aż do napotkania znaku terminalnego '\0'.<br><br>Dla specyfikatora typu c precyzja nie ma żadnego efektu.|
+|.*|	Precyzja nie jest określona przez tekst sformatowany. Precyzję określa się natomiast poprzez argument będący liczbą, który musi wystąpić bezpośrednio przed wypisywaną wartością.|
+
+Rozmiar:
+|Rozmiar|	opis|
+|-|-|
+|h|	Argument jest interpretowany jako short int lub unsigned short int (dotyczy tylko specyfikatorów liczbowych, tj. i, d, u, o, x oraz X).|
+|l|	Argument jest interpretowany jako long int lub unsigned long int dla specyfikatorów określających argumenty liczbowe tj. i, d, o, u, x oraz X.<br><br>Parametr ten stosuje się również do wypisywania znaku unikodowego jak i unikodowego łańcucha znaków stosowanych odpowiednio dla specyfikatorów c i s.|
+|L|	Argument jest interpretowany jako long double (dotyczy tylko specyfikatorów określających zmiennoprzecinkowe argumenty: f, e, E, g oraz G).|
+
