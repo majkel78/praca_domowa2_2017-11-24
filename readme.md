@@ -104,7 +104,7 @@ ponieważ:<br>
 Uwaga: zapis dwójkowy o długości innej niż wielokrotność 4 podczas konwersji uzupełniamy z przodu zerami, np:<br>
 101111<sub>(2)</sub> = 10 1111<sub>(2)</sub> = 0010 1111<sub>(2)</sub> = 2F<sub>(16)</sub>
 
-# Formatowanie printf()/scanf()
+# 3. Formatowanie printf()/scanf()
 Funkcje języka C printf() oraz scanf() używają specjalnych kodów (tagów) do wyświetlania zawartości przekazanych zmiennych lub interpretacji ciągu znaków w celu wpisania ich do zmiennej. Ogólna budowa wygląda następująco:
 ```%[flagi][szerokość][.precyzja][rozmiar]specyfikator_typu```
 
@@ -172,4 +172,53 @@ Rozmiar:
 |h|	Argument jest interpretowany jako short int lub unsigned short int (dotyczy tylko specyfikatorów liczbowych, tj. i, d, u, o, x oraz X).|
 |l|	Argument jest interpretowany jako long int lub unsigned long int dla specyfikatorów określających argumenty liczbowe tj. i, d, o, u, x oraz X.<br><br>Parametr ten stosuje się również do wypisywania znaku unikodowego jak i unikodowego łańcucha znaków stosowanych odpowiednio dla specyfikatorów c i s.|
 |L|	Argument jest interpretowany jako long double (dotyczy tylko specyfikatorów określających zmiennoprzecinkowe argumenty: f, e, E, g oraz G).|
+
+
+# 4. Program obliczający liczbę z ciągu Fibonacciego
+
+*Ciąg Fibonacciego* jest to ciąg liczb naturalnych, gdzie każda kolejna liczba jest sumą dwóch poprzednich.<br>
+Poniżej zaprezentowany jest program który oblicza i wyświetla liczbę Fibonacciego na konkretnej pozycji (podanej przez użytkownika).
+Algorytm polega wykonywaniu pętli w której wyznacza się sumę dwóch poprzednio wyznaczonych liczb (sum).
+Pętla wykonuje się taką ilość razy, aby dojść do zadanej przez użytkownika pozycji w ciągu.
+Ze względu na ograniczenie liczbowe zmiennej ```unsigned long``` program umożliwia obliczenie maksylanie do 92 liczby Fibonacciego.
+
+```c
+#include <stdio.h>
+
+int main() {
+
+    unsigned long int liczba_kolejna;
+    unsigned long int licznik;
+    unsigned long int wynik = 0;
+    unsigned long int poprzednia1=0;	// zmienne do przechowywania poprzednich liczb w kolejnosci:
+    unsigned long int poprzednia2=1;	// poprzednia1, poprzednia2, liczba_kolejna
+
+    printf("Podaj wartosc calkowita dla ktorej mam obliczyc liczbe Fibonacciego, n = ");
+    scanf(" %ld", &liczba_kolejna);
+
+    if (liczba_kolejna <= 92)
+    {
+		if(liczba_kolejna<2)
+			wynik=liczba_kolejna;
+		else
+		{
+			for (licznik = 2; licznik <= liczba_kolejna; licznik++)
+			{
+				wynik = poprzednia1+poprzednia2;
+				poprzednia1=poprzednia2;			// poprzednia1=liczba_kolejna(-2) bedzie tym czym byla liczba_kolejna(-1)
+				poprzednia2=wynik;					// poprzednia2=liczba_kolejna(-1) bedzie tym czym byla liczba_kolejna(0)
+			}
+        }
+
+        printf("\nLiczba Fibonacciego (%ld): %ld\n", liczba_kolejna, wynik);
+
+    }
+    else
+    {
+        printf("Za duza wartosc n, n <= 92\n");
+    }
+
+    return 0;
+}
+```
 
